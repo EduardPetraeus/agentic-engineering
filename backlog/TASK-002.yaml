@@ -1,0 +1,38 @@
+id: TASK-002
+title: "Fix incorrect scaffold.py args in getting-started.md"
+description: |
+  docs/getting-started.md Step 2 (lines 53-74) uses wrong scaffold.py arguments:
+  - --output (does not exist, should be --output-dir)
+  - --stack python (not a valid stack, should be python-data|python-web|docs-only|databricks-lakehouse)
+  - --governance core (flag does not exist)
+  - Missing required --mode flag (solo|team)
+  Also, the expected output structure shown (tasks/, standards/) does not match
+  actual scaffolder output (backlog/, .engineering/, .claude/commands/).
+  Fix the command and output tree to match the real scaffold.py API.
+  Rest of the file (Steps 1, 3, 4, 5) is correct — only Step 2 needs fixing.
+
+status: ready
+priority: medium
+agent: docs
+review: agent-review
+assignee: null
+sprint: null
+
+depends_on: []
+blocks: []
+
+definition_of_done:
+  - "scaffold.py command uses correct args: --name, --stack, --mode, --output-dir"
+  - "Expected output tree matches actual scaffolder output"
+  - "No references to --output, --governance, or --stack python"
+
+tags: [docs, bugfix]
+estimate: s
+
+actual_tokens: null
+actual_duration_minutes: null
+completed: null
+
+created: 2026-03-01
+updated: 2026-03-01
+notes: "Known issue from quickstart tutorial session. Logged as follow-up."
