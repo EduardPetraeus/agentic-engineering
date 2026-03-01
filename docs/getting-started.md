@@ -52,25 +52,39 @@ cd ai-project-templates
 
 python scaffold.py \
   --name my-saas-app \
-  --output ../my-saas-app \
-  --stack python \
-  --governance core
+  --stack python-data \
+  --mode solo \
+  --output-dir ../
 ```
 
 This creates:
 
 ```
 my-saas-app/
-├── CLAUDE.md                     # Governance constitution (from ai-governance-framework)
+├── CLAUDE.md                        # Agent constitution (governance)
+├── AGENTS.md -> CLAUDE.md           # Agent-agnostic alias (symlink)
+├── CONTEXT.md                       # Project context for agent sessions
+├── ARCHITECTURE.md                  # Architecture decisions and patterns
+├── README.md                        # Project README
+├── .gitignore                       # Git ignore rules
 ├── .claude/
-│   └── commands/                 # Agent commands (from ai-project-management)
-├── tasks/
-│   └── backlog/                  # YAML task files (from ai-project-management)
-├── standards/
-│   └── engineering.md            # Code standards (from ai-engineering-standards)
-├── src/                          # Your source code
-├── tests/                        # Your tests
-└── README.md                     # Project README
+│   └── commands/
+│       ├── pick-next-task.md        # Agent command: select next task
+│       ├── complete-task.md         # Agent command: mark task done
+│       └── create-task.md          # Agent command: create new task
+├── backlog/
+│   └── TASK-001.yaml                # First task template
+├── .engineering/
+│   ├── ruff.toml                    # Linter configuration
+│   └── pyproject.toml               # Project tooling config
+├── docs/
+│   └── adr/
+│       └── ADR-000-template.md      # Architecture Decision Record template
+├── src/                             # Your source code
+├── tests/                           # Your tests
+└── .github/
+    └── workflows/
+        └── ci.yml                   # CI/CD pipeline
 ```
 
 ### Option B: Manual Setup
@@ -85,16 +99,20 @@ git init
 # Copy governance constitution
 cp ../ai-governance-framework/templates/CLAUDE.md ./CLAUDE.md
 
+# Create agent-agnostic alias
+ln -s CLAUDE.md AGENTS.md
+
 # Create task structure
-mkdir -p tasks/backlog tasks/active tasks/done
+mkdir -p backlog
 mkdir -p .claude/commands
 
 # Copy a task template
-cp ../ai-project-management/templates/task-template.yaml ./tasks/backlog/001-initial-setup.yaml
+cp ../ai-project-management/templates/task-template.yaml ./backlog/TASK-001.yaml
 
 # Copy engineering standards
-mkdir -p standards
-cp ../ai-engineering-standards/templates/engineering.md ./standards/engineering.md
+mkdir -p .engineering
+cp ../ai-engineering-standards/templates/ruff.toml ./.engineering/ruff.toml
+cp ../ai-engineering-standards/templates/pyproject.toml ./.engineering/pyproject.toml
 ```
 
 ---
@@ -121,10 +139,10 @@ The template provides sensible defaults. You only need to change what is specifi
 
 ## Step 4: Create Your First Tasks
 
-Tasks are YAML files — one file per task, stored in `tasks/backlog/`:
+Tasks are YAML files — one file per task, stored in `backlog/`:
 
 ```yaml
-# tasks/backlog/001-setup-database.yaml
+# backlog/TASK-001.yaml
 id: "001"
 title: "Set up database schema"
 priority: high
@@ -161,8 +179,8 @@ claude
 The AI agent will:
 
 1. Read `CLAUDE.md` and understand the governance rules
-2. Check `tasks/` for available work
-3. Follow engineering standards from `standards/`
+2. Check `backlog/` for available work
+3. Follow engineering standards from `.engineering/`
 4. Operate within the defined boundaries
 
 ---
@@ -171,7 +189,7 @@ The AI agent will:
 
 With the ecosystem in place, your development workflow looks like this:
 
-1. **Define work** — Create task YAML files in `tasks/backlog/`
+1. **Define work** — Create task YAML files in `backlog/`
 2. **Agent picks up work** — It reads the task, creates a branch, and starts coding
 3. **Governance enforces boundaries** — The agent stays within its constitutional limits
 4. **Standards ensure quality** — Code style, testing, and architecture follow defined rules
@@ -195,4 +213,4 @@ The agent handles the implementation. You handle the direction.
 
 **Scaffolder fails:** Ensure Python 3.10+ is installed and you are running from within the `ai-project-templates` directory.
 
-**Tasks not picked up:** Verify the YAML syntax is valid. Use a YAML linter or `python -c "import yaml; yaml.safe_load(open('tasks/backlog/001.yaml'))"` to test.
+**Tasks not picked up:** Verify the YAML syntax is valid. Use a YAML linter or `python -c "import yaml; yaml.safe_load(open('backlog/TASK-001.yaml'))"` to test.

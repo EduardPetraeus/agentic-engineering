@@ -1,0 +1,58 @@
+site_name: Agentic Engineering
+site_description: Documentation for the Agentic Engineering ecosystem
+site_url: https://eduardpetraeus.github.io/agentic-engineering/
+repo_url: https://github.com/EduardPetraeus/agentic-engineering
+repo_name: EduardPetraeus/agentic-engineering
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Concepts:
+    - Philosophy: philosophy.md
+    - Architecture: architecture.md
+  - Guides:
+    - Multi-Agent Patterns: guides/multi-agent-patterns.md
+    - Context Architecture: guides/context-architecture.md
+  - Reference:
+    - Repo Map: reference/repo-map.md
+    - Glossary: reference/glossary.md
+  - Tutorials:
+    - Quickstart: quickstart-tutorial.md
+    - From Zero to v1.0: tutorials/from-zero-to-v1.md
+  - Future: future.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - toc:
+      permalink: true
