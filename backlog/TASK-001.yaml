@@ -1,0 +1,36 @@
+id: TASK-001
+title: "Add quickstart tutorial with scaffolder walkthrough"
+description: |
+  Create docs/quickstart-tutorial.md that walks a new user through:
+  1. Clone all 5 repos
+  2. Run the scaffolder to create a new project
+  3. Set up backlog with first task
+  4. Run governance checks
+  5. Make a PR with governance gate
+  This is the critical onboarding path for the Agentic Engineering OS.
+
+status: ready
+priority: high
+agent: docs
+review: human-review
+assignee: null
+sprint: null
+
+depends_on: []
+blocks: []
+
+definition_of_done:
+  - "Tutorial is complete and follows the actual workflow"
+  - "All commands tested and working"
+  - "Links to all 5 repos are correct"
+
+tags: [docs, onboarding, tutorial]
+estimate: m
+
+actual_tokens: null
+actual_duration_minutes: null
+completed: null
+
+created: 2026-03-01
+updated: 2026-03-01
+notes: "Key for adoption — without this, new users won't know where to start."
