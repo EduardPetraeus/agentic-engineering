@@ -9,7 +9,7 @@ description: |
   5. Make a PR with governance gate
   This is the critical onboarding path for the Agentic Engineering OS.
 
-status: ready
+status: done
 priority: high
 agent: docs
 review: human-review
@@ -29,7 +29,7 @@ estimate: m
 
 actual_tokens: null
 actual_duration_minutes: null
-completed: null
+completed: "2026-03-01"
 
 created: 2026-03-01
 updated: 2026-03-01

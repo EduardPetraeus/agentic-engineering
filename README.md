@@ -152,6 +152,7 @@ Version 0.1 ships. It is incomplete. It is opinionated. It will change. But it e
 | [Philosophy](./docs/philosophy.md) | Why agentic engineering exists and the principles behind it |
 | [Architecture](./docs/architecture.md) | How the five repos connect and integrate |
 | [Future Roadmap](./docs/future.md) | Vision for MCP distribution, SDK, and enterprise features |
+| [Quickstart Tutorial](./docs/quickstart-tutorial.md) | Hands-on walkthrough: scaffold, configure, and ship |
 | [Architecture Diagram](./assets/architecture-diagram.md) | Mermaid diagram of the full ecosystem |
 
 ---
