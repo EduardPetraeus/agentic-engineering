@@ -24,10 +24,10 @@ The Agentic Engineering OS is composed of five repositories, each with a single 
 
 | File | Purpose |
 |---|---|
-| `docs/getting-started.md` | Step-by-step setup guide |
+| `docs/tutorial.md` | Progressive tutorial (quickstart to advanced) |
 | `docs/philosophy.md` | Design principles and rationale |
 | `docs/architecture.md` | How the five repos connect |
-| `docs/quickstart-tutorial.md` | Hands-on scaffolder walkthrough |
+| `docs/governance-in-action.md` | Concrete governance scenarios |
 | `mkdocs.yml` | MkDocs Material site configuration |
 
 **How to use:** Clone the repo and read the documentation. This repo contains no executable code — it is purely documentation and architecture maps.
@@ -157,5 +157,5 @@ graph TD
 ## See Also
 
 - [Architecture](../architecture.md) — Detailed architecture diagram and integration points
-- [Getting Started](../getting-started.md) — Setup guide using the scaffolder
+- [Tutorial](../tutorial.md) — Setup guide using the scaffolder
 - [Glossary](./glossary.md) — Key terms defined

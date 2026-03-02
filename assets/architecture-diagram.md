@@ -24,8 +24,8 @@ graph TD
 graph LR
     subgraph "Your Project Repo"
         CM[CLAUDE.md<br/>Constitution]
-        T[tasks/<br/>Work Items]
-        S[standards/<br/>Quality Rules]
+        T[backlog/<br/>Work Items]
+        S[.engineering/<br/>Quality Rules]
         SRC[src/<br/>Source Code]
         TST[tests/<br/>Test Suite]
     end

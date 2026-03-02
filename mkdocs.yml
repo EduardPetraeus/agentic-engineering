@@ -28,19 +28,18 @@ theme:
 
 nav:
   - Home: index.md
-  - Getting Started: getting-started.md
+  - Tutorial: tutorial.md
   - Concepts:
     - Philosophy: philosophy.md
     - Architecture: architecture.md
+    - Governance in Action: governance-in-action.md
   - Guides:
     - Multi-Agent Patterns: guides/multi-agent-patterns.md
     - Context Architecture: guides/context-architecture.md
   - Reference:
     - Repo Map: reference/repo-map.md
     - Glossary: reference/glossary.md
-  - Tutorials:
-    - Quickstart: quickstart-tutorial.md
-    - From Zero to v1.0: tutorials/from-zero-to-v1.md
+    - Success Metrics: success-metrics.md
   - Future: future.md
 
 markdown_extensions:

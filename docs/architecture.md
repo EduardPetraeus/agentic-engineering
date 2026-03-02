@@ -36,8 +36,8 @@ This document explains how the five repositories in the agentic engineering ecos
                     │    Your Project Repo          │
                     │                              │
                     │  CLAUDE.md ←── governance    │
-                    │  tasks/   ←── project-mgmt  │
-                    │  standards/ ←── eng-stds    │
+                    │  backlog/ ←── project-mgmt  │
+                    │  .engineering/ ←── eng-stds │
                     └──────────────────────────────┘
 ```
 
@@ -49,7 +49,7 @@ Each repository has a clear, single responsibility. No overlap.
 
 ### agentic-engineering (this repo)
 
-**Owns:** Documentation, philosophy, architecture maps, getting-started guide, public-facing narrative.
+**Owns:** Documentation, philosophy, architecture maps, tutorials, public-facing narrative.
 
 **Does not own:** Any executable code, governance rules, task definitions, or engineering standards. This repo only describes and connects — it never defines.
 
@@ -183,10 +183,10 @@ Here is the full lifecycle, from the moment you decide to start a new project:
                           │
 3. CUSTOMIZE     Edit CLAUDE.md for your specific context
                           │
-4. DEFINE WORK   Create task YAML files in tasks/backlog/
+4. DEFINE WORK   Create task YAML files in backlog/
                           │
 5. AGENT READS   AI agent reads CLAUDE.md (governance),
-                 tasks/ (what to do), standards/ (how to do it)
+                 backlog/ (what to do), .engineering/ (how to do it)
                           │
 6. AGENT WORKS   Agent picks a task, creates a branch,
                  writes code within governance boundaries
@@ -208,6 +208,5 @@ The key insight: steps 5-7 are where the AI agent operates autonomously. Steps 1
 
 ## See Also
 
-- [Architecture Diagram (Mermaid)](../assets/architecture-diagram.md) — Visual diagram of repo relationships
 - [Philosophy](./philosophy.md) — Why the architecture is designed this way
-- [Getting Started](./getting-started.md) — Hands-on setup guide
+- [Tutorial](./tutorial.md) — Hands-on setup guide

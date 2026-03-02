@@ -205,4 +205,4 @@ All four agents run simultaneously. Each gets a prompt with 50-100 lines of spec
 
 - [Context Architecture](./context-architecture.md) — How to structure the context files agents read
 - [Architecture](../architecture.md) — How the five repos connect
-- [From Zero to v1.0](../tutorials/from-zero-to-v1.md) — End-to-end tutorial
+- [Tutorial](../tutorial.md) — Progressive guide from quickstart to advanced
